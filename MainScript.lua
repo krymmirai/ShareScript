@@ -6,6 +6,6 @@ end)
 if f == true then
     loadstring(d)()
 else
-  game.Players.LocalPlayer:Kick("Join Discord :D link copied. "..discordinv)
+  game.Players.LocalPlayer:Kick("Probably the wrong game/place | Join Discord for features :D link copied. "..discordinv)
   setclipboard(discordinv)
 end
