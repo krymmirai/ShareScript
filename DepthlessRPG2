@@ -1,7 +1,20 @@
 if not game:IsLoaded() then
-    game.Loaded:Wait()
-    end
-    wait()
+game.Loaded:Wait()
+end
+wait()
+local VirtualUser=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+VirtualUser:CaptureController()
+VirtualUser:ClickButton2(Vector2.new())
+end)
+warn("Anti-AFK has loaded")
+wait()
+repeat wait() until game:FindService("VirtualUser") or game:FindService("VirtualInputManager")
+   print("virtualinputmanager is no fun")
+wait()
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
+v:Disable()
+end
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
 --UI Library Window
