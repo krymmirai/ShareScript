@@ -1,0 +1,603 @@
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+    end
+    wait()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+--UI Library Window
+
+local Window = Library.CreateLib("Depthless RPG / Zero2 Hub  ", "Midnight")
+local status = Window:NewTab("Status")
+local Afarm = Window:NewTab("Auto Farm")
+local ABoss = Window:NewTab("Auto Boss Farm")
+local Aboost = Window:NewTab("Auto Boost")
+
+
+--status
+local stat = status:NewSection("Status")
+stat:NewLabel("Name : ".. game.Players.LocalPlayer.Character.Name .." [Dev]")
+stat:NewLabel("PlaceID : ".. game.PlaceId .."")
+stat:NewButton("Copy PlaceId", "ButtonInfo", function()
+    setclipboard(game.PlaceId)
+end)
+stat:NewLabel("JobID : ".. game.JobId .."")
+stat:NewButton("Copy JobId", "ButtonInfo", function()
+    setclipboard(game.JobId)
+end)
+stat:NewLabel("Script Make By SadThudatinh (Owner)")
+stat:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.KeypadZero, function()
+	Library:ToggleUI()
+end)
+--Auto Farm
+local farm = Afarm:NewSection("Auto Farm")
+
+farm:NewLabel("Lv 1 - 5")
+
+getgenv().athief = true
+
+farm:NewToggle("Huge Thief", "bruh", function(a1)
+    getgenv().athief = a1
+    if a1 then
+        dothief();
+    end
+end)
+
+function dothief()
+    spawn(function()
+        while athief == true do
+            local args = {[1] = 1}
+            thief()
+            wait()
+        end
+    end)
+ end
+
+farm:NewLabel("Lv 5 - 10")
+
+ getgenv().agass = true
+
+ farm:NewToggle("Lord Of the Grasslands", "bruh", function(a2)
+     getgenv().agrass = a2
+     if a2 then
+         dograss();
+     end
+ end)
+ function dograss()
+     spawn(function()
+         while agrass == true do
+             local args = {[1] = 1}
+             grass()
+             wait()
+         end
+     end)
+  end
+
+farm:NewLabel("Lv 10 - 55")
+
+  getgenv().aforest = true
+
+  farm:NewToggle("Forest Overlord", "bruh", function(a3)
+      getgenv().aforest = a3
+      if a3 then
+          doforest();
+      end
+  end)
+  function doforest()
+      spawn(function()
+          while aforest == true do
+              local args = {[1] = 1}
+              forest()
+              wait()
+          end
+      end)
+   end
+
+farm:NewLabel("Lv 55 - 95")
+
+getgenv().asand = true
+
+farm:NewToggle("Sandstone Monster", "bruh", function(a4)
+    getgenv().asand = a4
+    if a4 then
+        dosand();
+    end
+end)
+function dosand()
+    spawn(function()
+        while asand == true do
+            local args = {[1] = 1}
+            sand()
+            wait()
+        end
+    end)
+ end
+
+ farm:NewLabel("Lv 95 - 250")
+
+ farm:NewToggle("Fire Lord", "bruh", function(a5)
+    getgenv().afire = a5
+    if a5 then
+        dofire();
+    end
+end)
+function dofire()
+    spawn(function()
+        while afire == true do
+            local args = {[1] = 1}
+            fire()
+            wait()
+        end
+    end)
+ end
+
+ farm:NewLabel("Lv 250 - 455")
+
+ farm:NewToggle("Mythic Shroom", "bruh", function(a6)
+    getgenv().amythic = a6
+    if a6 then
+        domythic();
+    end
+end)
+function domythic()
+    spawn(function()
+        while amythic == true do
+            local args = {[1] = 1}
+            mythic()
+            wait()
+        end
+    end)
+ end
+
+farm:NewLabel("Lv 455 - 800")
+
+farm:NewToggle("Evil Snowman", "bruh", function(a7)
+    getgenv().aevil = a7
+    if a7 then
+        doevil();
+    end
+end)
+function doevil()
+    spawn(function()
+        while aevil == true do
+            local args = {[1] = 1}
+            evil()
+            wait()
+        end
+    end)
+ end
+
+farm:NewLabel("Lv 800 - 1255")
+
+farm:NewToggle("Scavenger Leader", "bruh", function(a8)
+    getgenv().ascar = a8
+    if a8 then
+        dosca();
+    end
+end)
+function dosca()
+    spawn(function()
+        while ascar == true do
+            local args = {[1] = 1}
+            scavenger()
+            wait()
+        end
+    end)
+ end
+
+farm:NewLabel("Lv 1255 - 2500")
+
+farm:NewToggle("Ore Demon", "bruh", function(a9)
+    getgenv().aore = a9
+    if a9 then
+        doore();
+    end
+end)
+function doore()
+    spawn(function()
+        while aore == true do
+            local args = {[1] = 1}
+            ore()
+            wait()
+        end
+    end)
+ end
+
+farm:NewLabel("Lv 2500 - 6000")
+
+ farm:NewToggle("Vanilla Monster", "bruh", function(a10)
+    getgenv().avani = a10
+    if a10 then
+        dovani();
+    end
+end)
+function dovani()
+    spawn(function()
+        while avani == true do
+            local args = {[1] = 1}
+            vani()
+            wait()
+        end
+    end)
+ end
+
+farm:NewToggle("Strawberry Brute", "bruh", function(a11)
+    getgenv().astraw = a11
+    if a11 then
+        dostraw();
+    end
+end)
+function dostraw()
+    spawn(function()
+        while astraw == true do
+            local args = {[1] = 1}
+            straw()
+            wait()
+        end
+    end)
+ end
+
+ farm:NewToggle("Sweet Brute", "bruh", function(a12)
+    getgenv().aswe = a12
+    if a12 then
+        doswe();
+    end
+end)
+function doswe()
+    spawn(function()
+        while aswe == true do
+            local args = {[1] = 1}
+            sweet()
+            wait()
+        end
+    end)
+ end
+
+ farm:NewToggle("Chocolate Brute", "bruh", function(a13)
+    getgenv().achoco = a13
+    if a13 then
+        docho();
+    end
+end)
+function docho()
+    spawn(function()
+        while achoco == true do
+            local args = {[1] = 1}
+            choco()
+            wait()
+        end
+    end)
+ end
+
+farm:NewLabel("Lv 6000 - 10000")
+
+farm:NewToggle("Void Sprite Brute", "bruh", function(a14)
+    getgenv().avoid = a14
+    if a14 then
+        dovoid();
+    end
+end)
+function dovoid()
+    spawn(function()
+        while avoid == true do
+            local args = {[1] = 1}
+            void()
+            wait()
+        end
+    end)
+ end
+
+farm:NewLabel("Lv 10000 - 15000")
+
+farm:NewToggle("Cloud Slayer", "bruh", function(a15)
+    getgenv().acloud = a15
+    if a15 then
+        docloud();
+    end
+end)
+function docloud()
+    spawn(function()
+        while acloud == true do
+            local args = {[1] = 1}
+            cloud()
+            wait()
+        end
+    end)
+ end
+
+farm:NewLabel("Lv 15000 - 23000")
+
+farm:NewToggle("Skeleton Pirate", "bruh", function(a16)
+    getgenv().apira = a16
+    if a16 then
+        dopira();
+    end
+end)
+function dopira()
+    spawn(function()
+        while apira == true do
+            local args = {[1] = 1}
+            pira()
+            wait()
+        end
+    end)
+ end
+
+ farm:NewLabel("Lv 23000 - 25000")
+
+ farm:NewToggle("Pharaoh Mummy", "bruh", function(a17)
+    getgenv().aphara = a17
+    if a17 then
+        dophara();
+    end
+end)
+function dophara()
+    spawn(function()
+        while aphara == true do
+            local args = {[1] = 1}
+            phara()
+            wait()
+        end
+    end)
+ end
+
+farm:NewLabel("Lv 25000 - 32000")
+
+farm:NewToggle("Hyperion Cursed Energy", "bruh", function(a18)
+    getgenv().ahyp = a18
+    if a18 then
+        dohyp();
+    end
+end)
+function dohyp()
+    spawn(function()
+        while ahyp == true do
+            local args = {[1] = 1}
+            hyp()
+            wait()
+        end
+    end)
+ end
+
+farm:NewLabel("Lv 32000 - 45000")
+
+farm:NewToggle("Wasteland Lord", "bruh", function(a19)
+    getgenv().awas = a19
+    if a19 then
+        dowas();
+    end
+end)
+function dowas()
+    spawn(function()
+        while awas == true do
+            local args = {[1] = 1}
+            was()
+            wait()
+        end
+    end)
+ end
+
+ farm:NewLabel("Lv 45000 - Max")
+
+ farm:NewToggle("Glacier Giant", "bruh", function(a20)
+    getgenv().agla = a20
+    if a20 then
+        dogla();
+    end
+end)
+function dogla()
+    spawn(function()
+        while agla == true do
+            local args = {[1] = 1}
+            gla()
+            wait()
+        end
+    end)
+ end
+--Auto Farm Boss
+local boss = ABoss:NewSection("Auto Farm")
+boss:NewButton("Auto Boss", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/krymmirai/ShareScript/main/DepthlessRPG",true))()
+end)
+--Farm Function
+function gla()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Glacier Giant")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function was()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Wasteland Lord")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function hyp()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Hyperion Cursed Energy")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function phara()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Pharaoh Mummy")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function pira()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Skeleton Pirate")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function cloud()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Cloud Slayer")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function void()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Void Sprite Brute")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function choco()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Chocolate Brute")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function sweet()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Sweet Brute")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function straw()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Strawberry Brute")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function vani()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Vanilla Monster")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function ore()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Ore Demon")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function scavenger()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Scavenger Leader")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function evil()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Evil Snowman")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function mythic()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Mythic Shroom")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function fire()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Fire Lord")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function sand()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Sandstone Monster")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function forest()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Forest Overlord")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function grass()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Lord of the Grasslands")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+function thief()
+local args = {
+    [1] = workspace.Mobs:FindFirstChild("Huge Thief")
+}
+game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+end
+--Auto Boost
+local ab = Aboost:NewSection("Auto Use Potions")
+getgenv().autoluck = true
+
+ab:NewToggle("Auto Luck Potion", "bruh", function(a)
+    getgenv().autoluck = a
+    if a then
+        doluck();
+    end
+end)
+
+function doluck()
+    spawn(function()
+        while autoluck == true do
+            local args = {[1] = 1}
+            luck()
+            wait(600)
+        end
+    end)
+ end
+
+ getgenv().autogold = true
+
+ ab:NewToggle("Auto Gold Potion", "bruh", function(b)
+     getgenv().autogold = b
+     if b then
+         dogold();
+     end
+ end)
+ 
+ function dogold()
+     spawn(function()
+         while autogold == true do
+             local args = {[1] = 1}
+             gold()
+             wait(600)
+         end
+     end)
+  end
+
+  getgenv().autodmg = true
+
+ ab:NewToggle("Auto Dmg Potion", "bruh", function(c)
+     getgenv().autodmg = c
+     if c then
+         dodmg();
+     end
+ end)
+ 
+ function dodmg()
+     spawn(function()
+         while autodmg == true do
+             local args = {[1] = 1}
+             damage()
+             wait(600)
+         end
+     end)
+  end
+--Boost Function
+function luck()
+    local args = {
+        [1] = "5+ Luck Potion"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.EffectPlayer:InvokeServer(unpack(args))
+end
+
+function gold()
+    local args = {
+        [1] = "Gold Potion"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.EffectPlayer:InvokeServer(unpack(args))
+end
+
+function damage()
+    local args = {
+        [1] = "Damage Potion"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.EffectPlayer:InvokeServer(unpack(args))
+end
