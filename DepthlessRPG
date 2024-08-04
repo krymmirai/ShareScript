@@ -1,0 +1,50 @@
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+    end
+    game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.One,false,game) 
+    while task.wait() do
+        --SuperBoss 
+        local args = {
+            [1] = workspace.Mobs:FindFirstChild("Guardian of the Abyss")
+        }
+        game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+        local args = {
+            [1] = workspace.Mobs:FindFirstChild("Skeletal Overlord")
+        }
+        game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+        --boss story
+        local args = {
+            [1] = workspace.Mobs:FindFirstChild("Solaris")
+        }
+        game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+        local args = {
+            [1] = workspace.Mobs:FindFirstChild("Koblox Skeleton")
+        }
+        game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+        local args = {
+            [1] = workspace.Mobs:FindFirstChild("The Devil")
+        }
+        game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+        --StoryBoss
+        local args = {
+            [1] = workspace.Mobs:FindFirstChild("Glacier Giant")
+        }
+        game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+        --SeverBoss
+        local args = {
+            [1] = workspace.Mobs:FindFirstChild("Frozen Deity")
+        }
+        game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+        local args = {
+            [1] = workspace.Mobs:FindFirstChild("Supreme Scavenger")
+        }
+        game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+        local args = {
+            [1] = workspace.Mobs:FindFirstChild("John Doe")
+        }
+        game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+        local args = {
+            [1] = workspace.Mobs:FindFirstChild("Blizzard Warlord")
+        }
+        game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+        end
