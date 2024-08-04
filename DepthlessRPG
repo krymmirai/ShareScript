@@ -25,11 +25,12 @@ if not game:IsLoaded() then
             [1] = workspace.Mobs:FindFirstChild("The Devil")
         }
         game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
-        --StoryBoss
-        local args = {
-            [1] = workspace.Mobs:FindFirstChild("Glacier Giant")
-        }
-        game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+        
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Unholy Bloxxer")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+
         --SeverBoss
         local args = {
             [1] = workspace.Mobs:FindFirstChild("Frozen Deity")
