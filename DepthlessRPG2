@@ -479,6 +479,14 @@ function doaby()
     end)
  end
 --boss
+
+function so()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Solaris")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+
 function aby()
     local args = {
         [1] = workspace.Mobs:FindFirstChild("Guardian of the Abyss")
