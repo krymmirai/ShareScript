@@ -398,6 +398,115 @@ local boss = ABoss:NewSection("Auto Farm")
 boss:NewButton("Auto Boss", "ButtonInfo", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/krymmirai/ShareScript/main/DepthlessRPG",true))()
 end)
+
+boss:NewToggle("The Devil Lv1000", "bruh", function(a21)
+    getgenv().athe = a21
+    if a21 then
+        dothe();
+    end
+end)
+function dothe()
+    spawn(function()
+        while athe == true do
+            local args = {[1] = 1}
+            the()
+            wait()
+        end
+    end)
+ end
+
+ boss:NewToggle("Koblox Skeleton Lv2250", "bruh", function(a22)
+    getgenv().akob = a22
+    if a22 then
+        dokob();
+    end
+end)
+function dokob()
+    spawn(function()
+        while akob == true do
+            local args = {[1] = 1}
+            kob()
+            wait()
+        end
+    end)
+ end
+
+ boss:NewToggle("Solaris Lv8000", "bruh", function(a23)
+    getgenv().aso = a23
+    if a23 then
+        doso();
+    end
+end)
+function doso()
+    spawn(function()
+        while aso == true do
+            local args = {[1] = 1}
+            so()
+            wait()
+        end
+    end)
+ end
+
+ boss:NewToggle("Skeleton Overlord Lv22000", "bruh", function(a24)
+    getgenv().aske = a24
+    if a24 then
+        doske();
+    end
+end)
+function doske()
+    spawn(function()
+        while aske == true do
+            local args = {[1] = 1}
+            ske()
+            wait()
+        end
+    end)
+ end
+
+ boss:NewToggle("Guardian of the Abyss Lv35000", "bruh", function(a25)
+    getgenv().aaby = a25
+    if a25 then
+        doaby();
+    end
+end)
+function doaby()
+    spawn(function()
+        while aaby == true do
+            local args = {[1] = 1}
+            aby()
+            wait()
+        end
+    end)
+ end
+--boss
+function aby()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Guardian of the Abyss")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+
+function ske()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Skeleton Overlord")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+
+function kob()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("Koblox Skeleton")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+
+function the()
+    local args = {
+        [1] = workspace.Mobs:FindFirstChild("The Devil")
+    }
+    game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+    end
+
 --Farm Function
 function gla()
     local args = {
