@@ -665,7 +665,7 @@ function doluck()
         while autoluck == true do
             local args = {[1] = 1}
             luck()
-            wait(600)
+            wait(3580)
         end
     end)
  end
