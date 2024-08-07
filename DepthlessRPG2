@@ -669,65 +669,13 @@ function doluck()
         end
     end)
  end
-
- getgenv().autogold = true
-
- ab:NewToggle("Auto Gold Potion", "bruh", function(b)
-     getgenv().autogold = b
-     if b then
-         dogold();
-     end
- end)
  
- function dogold()
-     spawn(function()
-         while autogold == true do
-             local args = {[1] = 1}
-             gold()
-             wait(600)
-         end
-     end)
-  end
-
-  getgenv().autodmg = true
-
- ab:NewToggle("Auto Dmg Potion", "bruh", function(c)
-     getgenv().autodmg = c
-     if c then
-         dodmg();
-     end
- end)
- 
- function dodmg()
-     spawn(function()
-         while autodmg == true do
-             local args = {[1] = 1}
-             damage()
-             wait(600)
-         end
-     end)
-  end
 --Boost Function
 function luck()
     local args = {
-        [1] = "5+ Luck Potion"
-    }
-    
-    game:GetService("ReplicatedStorage").Remotes.EffectPlayer:InvokeServer(unpack(args))
+    [1] = "+50% Luck Potion"
+}
+
+game:GetService("ReplicatedStorage"):waitForChild("Remotes"):WaitForChild("EffectPlayer"):InvokeServer(unpack(args))
 end
 
-function gold()
-    local args = {
-        [1] = "Gold Potion"
-    }
-    
-    game:GetService("ReplicatedStorage").Remotes.EffectPlayer:InvokeServer(unpack(args))
-end
-
-function damage()
-    local args = {
-        [1] = "Damage Potion"
-    }
-    
-    game:GetService("ReplicatedStorage").Remotes.EffectPlayer:InvokeServer(unpack(args))
-end
