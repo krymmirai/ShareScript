@@ -1,0 +1,107 @@
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+    end
+    wait()
+    local VirtualUser=game:service'VirtualUser'
+    game:service'Players'.LocalPlayer.Idled:connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+    end)
+    warn("Anti-AFK has loaded")
+    wait()
+    repeat wait() until game:FindService("VirtualUser") or game:FindService("VirtualInputManager")
+       print("virtualinputmanager is no fun")
+    wait()
+    for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
+    v:Disable()
+    end
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    
+    --UI Library Window
+    
+    local Window = Library.CreateLib("Anime Card Battle / Zero2 Hub  ", "Midnight")
+    local status = Window:NewTab("Status")
+    local Farm = Window:NewTab("Farm / Auto")
+
+    
+    
+    --status
+    local stat = status:NewSection("Status")
+    stat:NewLabel("Name : ".. game.Players.LocalPlayer.Character.Name .." [Dev]")
+    stat:NewLabel("PlaceID : ".. game.PlaceId .."")
+    stat:NewButton("Copy PlaceId", "ButtonInfo", function()
+        setclipboard(game.PlaceId)
+    end)
+    stat:NewLabel("JobID : ".. game.JobId .."")
+    stat:NewButton("Copy JobId", "ButtonInfo", function()
+        setclipboard(game.JobId)
+    end)
+    stat:NewLabel("Script Make By SadThudatinh (Owner)")
+    stat:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.KeypadZero, function()
+        Library:ToggleUI()
+    end)
+
+
+
+    --Farm / Auto
+    local afarm = status:NewSection("Farm")
+
+    getgenv().boost = true
+
+    afarm:NewToggle("Auto Grap Boost", "Item To Player", function(a1)
+        getgenv().boost = a1
+        if a1 then
+            dotp();
+        end
+    end)
+    
+    function dotp()
+        spawn(function()
+            while boost == true do
+                local args = {[1] = 1}
+                item()
+                wait(3)
+            end
+        end)
+     end
+
+     getgenv().asword = true
+
+     afarm:NewToggle("Auto Grap Boost", "Item To Player", function(a2)
+         getgenv().asword = a2
+         if a2 then
+             dosword();
+         end
+     end)
+     
+     function dosword()
+         spawn(function()
+             while asword == true do
+                 local args = {[1] = 1}
+                 sword()
+                 wait(30)
+             end
+         end)
+      end
+
+     --function
+
+
+     
+     function item()
+        for i, v in pairs(game.Workspace.ActivePotions:GetDescendants()) do
+            if v:IsA("TouchTransmitter") then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) 
+                wait()
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) 
+            end
+        end
+    end
+
+
+function sword()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5923.05, 104.59, -8283.18)
+    wait(1)
+    keypress(0x45)
+end
+
