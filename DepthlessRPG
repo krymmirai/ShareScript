@@ -43,4 +43,19 @@ if not game:IsLoaded() then
             [1] = workspace.Mobs:FindFirstChild("Blizzard Warlord")
         }
         game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
-        end
+local args = {
+    [1] = workspace:WaitForChild("Mobs"):WaitForChild("Giant Mountain Lurker")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DamageMob"):InvokeServer(unpack(args))
+local args = {
+    [1] = workspace:WaitForChild("Mobs"):WaitForChild("Hyper Mountain Lurker")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DamageMob"):InvokeServer(unpack(args))
+local args = {
+    [1] = workspace:WaitForChild("Mobs"):WaitForChild("Almighty Mountain Lurker")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DamageMob"):InvokeServer(unpack(args))
+end
