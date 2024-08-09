@@ -408,6 +408,9 @@ if not game:IsLoaded() then
      end
     --Auto Farm Boss
     local boss = ABoss:NewSection("Auto Farm")
+    boss:NewButton("TP Mountain", "ButtonInfo", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7089, 3143, -1475)
+    end)
     boss:NewButton("Auto Boss", "ButtonInfo", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/krymmirai/ShareScript/main/DepthlessRPG",true))()
     end)
@@ -750,14 +753,6 @@ function sell()
     local args = {
         [1] = "Tool",
         [2] = "Firebrand",
-        [3] = 9999
-    }
-    
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellItem"):InvokeServer(unpack(args))
-    wait()
-    local args = {
-        [1] = "Armor",
-        [2] = "Enchanted Ultimate Bloxxer",
         [3] = 9999
     }
     
