@@ -67,7 +67,7 @@ if not game:IsLoaded() then
 
      getgenv().asword = true
 
-     afarm:NewToggle("Auto Grap Boost", "Item To Player", function(a2)
+     afarm:NewToggle("Auto Sword", "Item To Player", function(a2)
          getgenv().asword = a2
          if a2 then
              dosword();
@@ -79,7 +79,7 @@ if not game:IsLoaded() then
              while asword == true do
                  local args = {[1] = 1}
                  sword()
-                 wait(30)
+                 wait(300)
              end
          end)
       end
@@ -100,8 +100,8 @@ if not game:IsLoaded() then
 
 
 function sword()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5923.05, 104.59, -8283.18)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5923.09, 104.59, -8287.86)
     wait(1)
-    keypress(0x45)
+    game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.E,false,game)
 end
 
