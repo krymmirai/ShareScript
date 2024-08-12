@@ -656,7 +656,7 @@ if not game:IsLoaded() then
     local ab = Aboost:NewSection("Auto Use Potions")
     getgenv().autoluck = true
     
-    ab:NewToggle("Auto Luck Potion", "bruh", function(a)
+    ab:NewToggle("Auto Luck 50% Potion", "bruh", function(a)
         getgenv().autoluck = a
         if a then
             doluck();
@@ -668,10 +668,29 @@ if not game:IsLoaded() then
             while autoluck == true do
                 local args = {[1] = 1}
                 luck()
-                wait(3580)
+                wait(3595)
             end
         end)
      end
+
+     getgenv().autoluck2 = true
+    
+     ab:NewToggle("Auto Luck 100% Potion", "bruh", function(aa)
+         getgenv().autoluck2 = aa
+         if aa then
+             doluck2();
+         end
+     end)
+     
+     function doluck2()
+         spawn(function()
+             while autoluck2 == true do
+                 local args = {[1] = 1}
+                 luck2()
+                 wait(1795)
+             end
+         end)
+      end
      ab:NewLabel("Auto Sell")
 
      getgenv().autosell = true
@@ -765,6 +784,13 @@ end
     function luck()
         local args = {
         [1] = "+50% Luck Potion"
+    }
+    
+    game:GetService("ReplicatedStorage"):waitForChild("Remotes"):WaitForChild("EffectPlayer"):InvokeServer(unpack(args))
+    end
+    function luck2()
+        local args = {
+        [1] = "+100% Luck Potion"
     }
     
     game:GetService("ReplicatedStorage"):waitForChild("Remotes"):WaitForChild("EffectPlayer"):InvokeServer(unpack(args))
