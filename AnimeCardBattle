@@ -83,6 +83,9 @@ if not game:IsLoaded() then
              end
          end)
       end
+afarm:NewButton("Tp Shibuya", "ButtonInfo", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(459.75, 247.28, 5931.31)
+    end)
 
      --function
 
