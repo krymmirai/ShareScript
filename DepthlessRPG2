@@ -414,7 +414,23 @@ if not game:IsLoaded() then
     boss:NewButton("Auto Boss", "ButtonInfo", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/krymmirai/ShareScript/main/DepthlessRPG",true))()
     end)
-    
+
+boss:NewToggle("Final Event Boss", "bruh", function(aa1)
+        getgenv().afinal = aa1
+        if aa1 then
+            dofinal();
+        end
+    end)
+    function dofinal()
+        spawn(function()
+            while afinal == true do
+                local args = {[1] = 1}
+                final()
+                wait()
+            end
+        end)
+     end
+
     boss:NewToggle("The Devil Lv1000", "bruh", function(a21)
         getgenv().athe = a21
         if a21 then
@@ -495,7 +511,14 @@ if not game:IsLoaded() then
         end)
      end
     --boss
-    
+function final()
+        local args = {
+            [1] = workspace.Mobs:FindFirstChild("Tempest Conqueror")
+        }
+        game:GetService("ReplicatedStorage").Remotes.DamageMob:InvokeServer(unpack(args))
+        end
+
+
     function so()
         local args = {
             [1] = workspace.Mobs:FindFirstChild("Solaris")
