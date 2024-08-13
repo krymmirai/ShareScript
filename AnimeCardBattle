@@ -44,7 +44,7 @@ if not game:IsLoaded() then
 
 
     --Farm / Auto
-    local afarm = status:NewSection("Farm")
+    local afarm = Farm:NewSection("Farm")
 
     getgenv().boost = true
 
