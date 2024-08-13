@@ -712,9 +712,9 @@ boss:NewToggle("Final Event Boss", "bruh", function(aa1)
     local ab = Aboost:NewSection("Auto Use Potions")
     getgenv().autoluck = true
     
-    ab:NewToggle("Auto Luck 50% Potion", "bruh", function(a)
-        getgenv().autoluck = a
-        if a then
+    ab:NewToggle("Auto Luck 50% Potion", "bruh", function(aa10)
+        getgenv().autoluck = aa10
+        if aa10 then
             doluck();
         end
     end)
@@ -731,9 +731,9 @@ boss:NewToggle("Final Event Boss", "bruh", function(aa1)
 
      getgenv().autoluck2 = true
     
-     ab:NewToggle("Auto Luck 100% Potion", "bruh", function(aa)
-         getgenv().autoluck2 = aa
-         if aa then
+     ab:NewToggle("Auto Luck 100% Potion", "bruh", function(aa11)
+         getgenv().autoluck2 = aa11
+         if aa11 then
              doluck2();
          end
      end)
@@ -760,7 +760,7 @@ boss:NewToggle("Final Event Boss", "bruh", function(aa1)
     
     function dosell()
         spawn(function()
-            while autoluck == true do
+            while autosell == true do
                 local args = {[1] = 1}
                 sell()
                 wait(5)
@@ -833,3 +833,32 @@ function sell()
     
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellItem"):InvokeServer(unpack(args))
 end    
+
+    --Boost Function
+    function luck()
+        local args = {
+        [1] = "+50% Luck Potion"
+    }
+    
+    game:GetService("ReplicatedStorage"):waitForChild("Remotes"):WaitForChild("EffectPlayer"):InvokeServer(unpack(args))
+    wait(0.5)
+    local args = {
+        [1] = "+50% Damage Potion"
+    }
+    
+    game:GetService("ReplicatedStorage"):waitForChild("Remotes"):WaitForChild("EffectPlayer"):InvokeServer(unpack(args))
+    end
+    function luck2()
+        local args = {
+        [1] = "+100% Luck Potion"
+    }
+    
+    game:GetService("ReplicatedStorage"):waitForChild("Remotes"):WaitForChild("EffectPlayer"):InvokeServer(unpack(args))
+    wait(0.5)
+    local args = {
+        [1] = "+100% Damage Potion"
+    }
+    
+    game:GetService("ReplicatedStorage"):waitForChild("Remotes"):WaitForChild("EffectPlayer"):InvokeServer(unpack(args))
+    end
+
