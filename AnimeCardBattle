@@ -83,12 +83,35 @@ if not game:IsLoaded() then
              end
          end)
       end
+
+      afarm:NewToggle("Auto Infinitie", "Item To Player", function(a3)
+        getgenv().ainf = a3
+        if a3 then
+            doinf();
+        end
+    end)
+    
+    function doinf()
+        spawn(function()
+            while ainf == true do
+                local args = {[1] = 1}
+                inf()
+                wait(3)
+            end
+        end)
+     end
 afarm:NewButton("Tp Shibuya", "ButtonInfo", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(459.75, 247.28, 5931.31)
     end)
 
      --function
-
+     function inf()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(462.23, 247.22, 5960.12)
+        wait(0.5)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(459.75, 247.28, 5931.31)
+        wait(1)
+        game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.E,false,game)
+    end
 
      
      function item()
@@ -107,4 +130,3 @@ function sword()
     wait(1)
     game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.E,false,game)
 end
-
